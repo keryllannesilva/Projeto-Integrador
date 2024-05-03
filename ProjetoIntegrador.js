@@ -37,11 +37,11 @@ function menuPrincipal() {
   console.log("------------------------------");
   console.log("        Menu Principal        ");
   console.log("------------------------------");
-  console.log("x                            x");
-  console.log("x   1. Realizar Venda        x");
-  console.log("x   2. Estoque               x");
-  console.log("x   3. Cadastro de Clientes  x");
-  console.log("x   4. Sair                  x");
+  console.log("x \t\t\t\t\t\t\t\t\t\x");
+  console.log("x\t1. Realizar Venda\tx");
+  console.log("x\t2. Estoque\tx");
+  console.log("x\t3. Cadastro de Clientes\tx");
+  console.log("x\t4. Sair\tx");
   console.log("x                            x");
   console.log("x                            x");
   console.log("x                            x");
