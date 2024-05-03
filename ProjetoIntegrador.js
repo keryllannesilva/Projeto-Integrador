@@ -1,21 +1,13 @@
 var readline = require("readline-sync");
 let listaDeProdutos = [];
 listaClientes = [];
+let conta = [];
+
 function menuLogin() {
   console.log("------------------------------");
   console.log("        Burguer Craft         ");
   console.log("------------------------------");
-  console.log("x                            x");
-  console.log("x                            x");
-  console.log("x       Login:               x");
-  console.log("x       Senha:               x");
-  console.log("x                            x");
-  console.log("x                            x");
-  console.log("x                            x");
-  console.log("x                            x");
-  console.log("------------------------------");
-  console.log("                              ");
-  console.log("------------------------------");
+  
 
   var login = readline.question("Digite seu login: ");
   var senha = readline.question("Digite sua senha: ");
