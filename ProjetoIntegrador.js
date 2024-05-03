@@ -1,7 +1,8 @@
 var readline = require("readline-sync");
 let listaDeProdutos = [];
 listaClientes = [];
-let conta = [];
+let conta = ;
+
 
 function menuLogin() {
   console.log("------------------------------");
@@ -10,16 +11,24 @@ function menuLogin() {
   
 
   var login = readline.question("Digite seu login: ");
-  var senha = readline.question("Digite sua senha: ");
-
+  const tentativas = 3;
+  while (tentativas>0) {
+     var senha = readline.question("Digite sua senha: ");
+  
   if ((login === "admin") & (senha === "123")) {
     console.log("acesso concedido!");
   } else {
     console.log("Acesso Negado. Tente novamente!");
+    tentativas--
+    console.log ('Tentativas restantes: ' + tentativas);}
+    if (tentativas===0) {
+      console.log('Conta Bloqueada! Entre em contato com o Admin para liberar o acesso')}
     menuLogin();
     login;
     senha;
-  }
+  }}
+
+  
 }
 menuLogin();
 menuPrincipal();
@@ -117,19 +126,27 @@ function menuHamb() {
 
   switch (esc) {
     case "1":
-      console.log("Computar na conta");
+      console.log("Adicionado na conta!");
+      conta+=10
+      console.log('Valor do Pedido: ' + conta);
       break;
 
     case "2":
-      console.log("Computar na conta");
+      console.log("Adicionado na conta!");
+      conta+=15
+      console.log('Valor do Pedido: ' + conta);
       break;
 
     case "3":
-      console.log("Computar na conta");
+      console.log("Adicionado na conta!");
+      conta+=18
+      console.log('Valor do Pedido: ' + conta);
       break;
 
     case "4":
-      console.log("Computar na conta");
+      console.log("Adicionado na conta!");
+      conta+=20
+      console.log('Valor do Pedido: ' + conta);
       break;
 
     case "5":
@@ -146,6 +163,8 @@ function menuHamb() {
     menuVendas();
   } else {
     console.log("Pedido efetuado com sucesso!");
+    console.log ("O total do seu pedido é: " + conta);
+    conta=0;
     menuPrincipal();
   }
 }
@@ -172,15 +191,21 @@ function hambPersonalizado() {
 
   switch (MenuHPersonalizado) {
     case 1:
-      console.log("computar na conta");
+      console.log("Adicionado na conta!");
+      conta+=12.99
+      console.log('Valor do Pedido: ' + conta);
       break;
 
     case 2:
       console.log("computar na conta");
+      conta+=20.39
+      console.log('Valor do Pedido: ' + conta);
       break;
 
     case 3:
       console.log("computar na conta");
+      conta+=34.99
+      console.log('Valor do Pedido: ' + conta);
       break;
 
     case 4:
@@ -197,6 +222,8 @@ function hambPersonalizado() {
     menuVendas();
   } else {
     console.log("Pedido efetuado com sucesso!");
+    console.log ("O total do seu pedido é: " + conta);
+    conta=0;
     menuPrincipal();
   }
 }
@@ -206,16 +233,16 @@ function menuBebidas() {
   console.log("        Menu Bebidas          ");
   console.log("------------------------------");
   console.log("x       Refrigerante         x");
-  console.log("x   1. Coca-Cola             x");
-  console.log("x   2. Antartica             x");
-  console.log("x   3. H20 Limonato          x");
+  console.log("x   1. Coca-Cola     (R$7)   x");
+  console.log("x   2. Antartica     (R$6)   x");
+  console.log("x   3. H20 Limonato  (R$5)   x");
   console.log("x                            x");
   console.log("------------------------------");
   console.log("x                            x");
   console.log("x       Cervejas             x");
-  console.log("x   4. Heineken              x");
-  console.log("x   5. budweiser             x");
-  console.log("x   6. Brahma                x");
+  console.log("x   4. Heineken      (R$10)  x");
+  console.log("x   5. budweiser     (R$10)  x");
+  console.log("x   6. Brahma        (R$10)  x");
   console.log("x   7. Voltar                x");
   console.log("------------------------------");
   console.log("       Seja Bem-Vindo!        ");
@@ -226,21 +253,33 @@ function menuBebidas() {
   switch (opcbebida) {
     case 1:
       console.log("Adicionado a conta!");
+      conta+=7
+      console.log('Valor do Pedido: ' + conta);
       break;
     case 2:
       console.log("Adicionado a conta!");
+      conta+=6
+      console.log('Valor do Pedido: ' + conta);
       break;
     case 3:
       console.log("Adicionado a conta!");
+      conta+=5
+      console.log('Valor do Pedido: ' + conta);
       break;
     case 4:
       console.log("Adicionado a conta!");
+      conta+=10
+      console.log('Valor do Pedido: ' + conta);
       break;
     case 5:
       console.log("Adicionado a conta!");
+      conta+=10
+      console.log('Valor do Pedido: ' + conta);
       break;
     case 6:
       console.log("Adicionado a conta!");
+      conta+=10
+      console.log('Valor do Pedido: ' + conta);
       break;
     case 7:
       menuVendas();
@@ -255,6 +294,8 @@ function menuBebidas() {
     menuVendas();
   } else {
     console.log("Pedido efetuado com sucesso!");
+    console.log ("O total do seu pedido é: " + conta);
+    conta=0;
     menuPrincipal();
   }
 }
@@ -298,7 +339,6 @@ function estoque() {
   if (algoMais4 === "sim") {
     menuVendas();
   } else {
-    console.log("Pedido efetuado com sucesso!");
     menuPrincipal();
   }
 }
