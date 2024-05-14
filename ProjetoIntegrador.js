@@ -9,17 +9,11 @@ function Encerrar(){
 
 
 function menuLogin() {
- 
-  console.log("------------------------------------------------------------");
-  console.log("                        Burguer Craft                       ");
-  console.log("------------------------------------------------------------");
-  
-
-  
   var tentativas = 3;
   while (tentativas>0) {
      var login = readline.question("Digite seu login: ");
      var senha = readline.question("Digite sua senha: ");
+     var enter = readline.question("Pressione 'Enter' para continuar...")
 
   if ((login === "admin") & (senha === "123")) {
     console.log("Logando...");
